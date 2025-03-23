@@ -10,7 +10,7 @@ node{
         sh "${mvnHome}/bin/mvn clean deploy"
     }
     stage('sonarreport'){
-        sh "${mvnHome}/bin/mvn clean sonar:sonar"
+        sh "${mvnHome}/bin/mvn sonar:sonar"
     }
      stage('deploytomcat'){
         sshagent(['tomcatserver']) {
